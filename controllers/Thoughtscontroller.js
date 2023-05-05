@@ -3,7 +3,7 @@ const { Thoughts, User } = require('../models');
 
 module.exports = {
   // Get all thoughts
-  async getThoughtss(req, res) {
+  async getThoughts(req, res) {
     try {
       const thoughts = await Thoughts.find();
 
@@ -18,7 +18,7 @@ module.exports = {
     }
   },
   // Get a single thought
-  async getSingleThoughts(req, res) {
+  async getSingleThought(req, res) {
     try {
       const thought = await Thoughts.findOne({ _id: req.params.thoughtId })
         .select('-__v');
@@ -36,7 +36,7 @@ module.exports = {
     }
   },
   // create a new thought
-  async createThoughts(req, res) {
+  async createThought(req, res) {
     try {
       const thought = await Thoughts.create(req.body);
       res.json(thought);
@@ -45,7 +45,7 @@ module.exports = {
     }
   },
   // Delete a thought and remove them from the course
-  async deleteThoughts(req, res) {
+  async deleteThought(req, res) {
     try {
       const thought = await Thoughts.findOneAndRemove({ _id: req.params.thoughtId });
 
