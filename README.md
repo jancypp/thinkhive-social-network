@@ -22,7 +22,7 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
 ## Link to demo
-https://www.loom.com/share/6366a1460e654b1797ef2f620b936313
+https://www.loom.com/share/fb94c1ca625449d8a0447d9eceff8271
 
 ## Link to Github repository
 https://github.com/jancypp/thinkhive-social-network
