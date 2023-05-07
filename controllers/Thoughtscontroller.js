@@ -46,27 +46,27 @@ module.exports = {
   },
 
   // update a thought
-  // async updatedThought (req, res) {
-  //   try {
-  //     const { thoughtId } = req.params;
-  //     const { thoughtText, userName } = req.body;
+  async updatedThought (req, res) {
+    try {
+      const { thoughtId } = req.params;
+      const { thoughtText, userName } = req.body;
   
-  //     const updatedThought = await Thoughts.findByIdAndUpdate(
-  //       thoughtId,
-  //       { thoughtText, userName },
-  //       { new: true }
-  //     );
+      const updatedThought = await Thoughts.findByIdAndUpdate(
+        thoughtId,
+        { thoughtText, userName },
+        { new: true }
+      );
   
-  //     if (!updatedThought) {
-  //       return res.status(404).json({ message: 'Thought not found' });
-  //     }
+      if (!updatedThought) {
+        return res.status(404).json({ message: 'Thought not found' });
+      }
   
-  //     res.status(200).json(updatedThought);
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).json({ message: 'Server error' });
-  //   }
-  // },
+      res.status(200).json(updatedThought);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  },
 
   // Delete a thought and remove them from the course
   async deleteThought(req, res) {
